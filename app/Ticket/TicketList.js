@@ -3,7 +3,7 @@ async function getTickets () {
  
     const res = await fetch("http://localhost:4000/tickets",{
       next:{
-        revalidate:30
+        revalidate:0
       }
     })
     const data = res.json() 
@@ -11,19 +11,20 @@ async function getTickets () {
      
 }
 
-export default async function TicketList() {
+export default async function TicketList({params}) {
   const tickets = await getTickets()
-  return (
-    <div >
+    return (
+     <div >
         {tickets.map((ticket)=>(
           <div key ={ticket.id} className="mytickets">
            <Link className="myLink" href ={`/Ticket/${ticket.id}`}>
            <h3>{ticket.title}</h3>
-           <p>{ticket.body.slice(0,200)}...</p>
+           <p>{ticket.body}...</p>
            <div className={`pill ${ticket.priority}`}>
             {ticket.priority} priority
            </div>
           </Link>
+        
         </div>
           ))}
     {tickets.lenght===0 &&(<p>There are no open tickets, yayy!</p>)}

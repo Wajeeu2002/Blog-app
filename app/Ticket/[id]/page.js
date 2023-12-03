@@ -1,4 +1,4 @@
-async function generateStaticParams(params) {
+  async function generateStaticParams(id) {
  const res = await fetch("http://localhost:4000/tickets")
  const data =res.json()
  return data.map(ticket => ({
@@ -7,21 +7,23 @@ id :  ticket.id
 }
 
 
-
 async function getTicket (id) {
   const res = await fetch("http://localhost:4000/tickets/" + id,{
-    next:{
+    
+  next:{
       revalidate:60
     }
   })
   const data = res.json() 
   return data;
+   }
+
    
-}
 
 export default async function TicketDetails({params}) {
- const ticket = await getTicket(params.id)
-    return (
+   
+  const ticket = await getTicket(params.id)
+ return (
 <div>
   <nav>
     <h2 className="ticketTitle">Ticket Details</h2>
@@ -33,9 +35,11 @@ export default async function TicketDetails({params}) {
      <small>created by {ticket.user_email}</small>
      <p>{ticket.body}</p>
      <div className={`pill ${ticket.priority}`}>
-      {ticket.priority}
+      {ticket.priority} priority
      </div>
+     
   </div>
+
 </div>
 </div>
   )

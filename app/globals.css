@@ -32,10 +32,15 @@ body {
   .heading{
   color:#7856ff;
 }
-.link1,.link2{
+.link1,.link2,.link3{
   margin: 10px;
   text-decoration: none;
 }
+
+.link1:hover,.link2:hover,.link3:hover{
+color: #7856ff;
+}
+
 
 /*Ticket styles */
 
@@ -57,27 +62,34 @@ h3{
   color:black
 }
 
-.pill.high {
+.pill.low {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+  padding: 0.5em 0.5em 0;
   flex-wrap: wrap;
+ color: #00f;
+
 }
 
-.pill.medium {
+
+ .pill.medium {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  color:#008000
+}
+
+.pill.high{
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   flex-wrap: wrap;
-
-  }
+ color:#f00;
+ padding: 0.5em 0.5em 0;
+}
   
-  .pill.low {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    flex-wrap: wrap;
-  }
+  
    .ticketTitle{
     margin: 1.5em;
    }
@@ -127,35 +139,7 @@ color:#7856ff;
   text-align: center;
   margin: 10% auto;
 }
-main {
- 
-}
-main > h2 {
 
-}
-p > a {
- 
-}
-
-/* nav styles */
-/*
-nav {
-  @apply
-    pb-4
-    border-b-2 border-gray-200
-    flex items-center gap-5 
-    my-10 mx-auto 
-    max-w-5xl;
-}
-nav a, nav span {
- 
-}
-nav a:hover {
- 
-}
-main nav {
- 
-}
 
 /* button styles */
 
@@ -164,9 +148,7 @@ main nav {
  justify-content: center;
  align-items: center;
 }
-button:hover {
 
-}
 .btn-primary {
  background-color:#7856ff; 
  color: #fff;
@@ -174,93 +156,45 @@ button:hover {
  font-weight: bold;
  margin: 1em;
 }
-.btn-secondary {
- 
-}
+
 
 /* form styles */
-/*
-form {
-  @apply 
-    py-4 px-7 
-    bg-primary 
-    bg-opacity-5 
-    rounded-md 
-    block 
-    mx-auto 
-    min-w-fit w-1/4;
+
+.myform {
+  display: block;
+  max-width: 55%;
+  margin: 3% auto;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #EEF1FF;
+  padding :20px;
+  
 }
 form label {
-  @apply block;
+  margin-left: 23%;
+ 
 }
 form input,
 form textarea,
-form select {
-  @apply 
-    block 
-    mt-2 my-4 px-2 py-1 
-    rounded-sm w-full;
+form select
+ {
+display:block;
+padding: 0.6em 0.4em;
+margin: 2% auto;
+width: 53% !important;
+border: none;
+outline: none;
 }
+
 form button {
-  @apply block mx-auto;
+  display:block;
+  padding: 0.6em 0.4em;
+  margin: 5% auto;
+ background:#7856ff;
+ color: #fff;
+ cursor: pointer;
 }
 
-/* feedback styles */
-/*
-.error {
-  @apply 
-    border-2 
-    border-red-500 
-    bg-red-300
-    text-red-800 
-    py-1 px-2 
-    rounded-sm
-    block
-    max-w-fit
-    my-4 mx-auto;
-}
 
-/* card styles */
-/*
-.card {
-  @apply 
-    bg-white 
-    shadow-sm 
-    rounded-md 
-    py-3 px-4 my-4 
-    relative 
-    overflow-hidden;
-}
-.card h3 {
-  @apply 
-    font-bold text-gray-700 text-sm 
-    mb-0;
-}
-.card p {
-  @apply my-4 text-sm leading-6;
-}
 
-/* pill styles */
-/*
-.pill {
-  @apply 
-    py-1 px-2 mt-3
-    inline-block 
-    text-xs font-semibold;
-}
-.pill.high {
-  @apply bg-red-300 text-red-600;
-}
-.pill.medium {
-  @apply bg-blue-300 text-blue-600;
-}
-.pill.low {
-  @apply bg-emerald-300 text-emerald-600;
-}
-.card .pill {
-  @apply 
-    absolute bottom-0 right-0 
-    rounded-tl-md;
-}
-
-*/ 
